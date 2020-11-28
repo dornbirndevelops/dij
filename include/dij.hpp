@@ -12,7 +12,7 @@ namespace dij
     template <typename Interface, typename Implementation, typename... Args>
     void Register(Args &&... args)
     {
-        instances[typeid(Interface)] = std::make_unique<Implementation>(std::forward<Args>(args)...);
+        instances[typeid(Interface)] = std::make_shared<Implementation>(std::forward<Args>(args)...);
     }
 
     template <typename Interface>
