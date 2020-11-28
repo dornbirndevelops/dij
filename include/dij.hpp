@@ -5,8 +5,13 @@
 #include <typeinfo>
 #include <unordered_map>
 
-class dij {
+class dij
+{
 public:
+    dij() = delete;
+    dij(const dij &) = delete;
+    virtual ~dij() = default;
+
     template <typename Interface, typename Implementation, typename... Args>
     static void Register(Args &&... args)
     {
@@ -24,5 +29,5 @@ public:
     }
 
 private:
-    static std::unordered_map<std::type_index, std::shared_ptr<void>>& instances();
+    static std::unordered_map<std::type_index, std::shared_ptr<void>> &instances();
 };
