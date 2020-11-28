@@ -9,8 +9,6 @@
 int main()
 {
     dij::Register<Animal, Duck>();
-    dij::Register<Animal, Duck>();
-    dij::Register<Animal, Duck>();
     dij::Register<Car, Skoda>();
 
     Person alex;
